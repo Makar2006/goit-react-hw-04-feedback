@@ -1,16 +1,20 @@
 import css from './Statistics.module.css';
 
-export const Statistics = ({
+const Statistics = ({
   title,
   good,
   neutral,
   bad,
   total,
-  positiveFeedbackPercentage,
+  positivePercentage,
 }) => {
   return (
     <ul className={css.statisticsList}>
-      {title && <p className={css.feedbackHeader}>{title}</p>}
+      {title && (
+        <li>
+          <p className={css.feedbackHeader}>{title}</p>
+        </li>
+      )}
       <li className={css.statisticsItem}>
         <p className={css.feedbackText}>Good:</p>
         <span className={css.feedbackSpan}>{good}</span>
@@ -29,8 +33,21 @@ export const Statistics = ({
       </li>
       <li className={css.statisticsItem}>
         <p className={css.feedbackText}>Positive Feedback:</p>
-        <span className={css.feedbackSpan}>{positiveFeedbackPercentage}%</span>
+        <span className={css.feedbackSpan}>
+          {Math.round(positivePercentage)}%
+        </span>
       </li>
     </ul>
   );
 };
+// const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
+//   <div>
+//     <p>Good: {good}</p>
+//     <p>Neutral: {neutral}</p>
+//     <p>Bad: {bad}</p>
+//     <p>Total: {total}</p>
+//     <p>Positive feedback:{Math.round(positivePercentage)}%</p>
+//   </div>
+// );
+
+export default Statistics;
