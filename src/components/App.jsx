@@ -12,15 +12,15 @@ function App() {
   const onClick = option => {
     switch (option) {
       case 'good':
-        setGood(a => a + 1);
+        setGood(g => g + 1);
         break;
 
       case 'neutral':
-        setNeutral(a => a + 1);
+        setNeutral(n => n + 1);
         break;
 
       case 'bad':
-        setBad(a => a + 1);
+        setBad(b => b + 1);
         break;
       default:
         throw new Error('Invalid option');
