@@ -39,7 +39,7 @@ function App() {
         ></Feedback>
       </Section>
       <Section>
-        {!totalFeed === 0 ? (
+        {totalFeed === 0 ? (
           <Notification message="There is no feedback" />
         ) : (
           <Statistics
